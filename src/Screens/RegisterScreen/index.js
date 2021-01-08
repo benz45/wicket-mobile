@@ -45,13 +45,15 @@ const RegisterScreen = () => {
           onChange={(e) => _setPassword(e.nativeEvent.text)}
         />
       </Styled.ContainerTextInput>
-      <Styled.ContainerTextInput>
-        <Styled.CPassword
-          value={cpassword}
-          error={!!error.cpassword}
-          onChange={(e) => _setCPassword(e.nativeEvent.text)}
-        />
-      </Styled.ContainerTextInput>
+      {password.length ? (
+        <Styled.ContainerTextInput>
+          <Styled.CPassword
+            value={cpassword}
+            error={!!error.cpassword}
+            onChange={(e) => _setCPassword(e.nativeEvent.text)}
+          />
+        </Styled.ContainerTextInput>
+      ) : null}
 
       <Styled.Button loading={busy} onPress={() => _register()}>
         Create new account
