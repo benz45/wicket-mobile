@@ -4,9 +4,6 @@ import {TouchableOpacity} from 'react-native';
 // Styles
 import * as Styled from 'root/src/Styles/Screens/Styled_RegisterScreen';
 
-// Components
-import {WelcomeLogo} from 'root/src/Components/logos/welcomeLogo';
-
 //Custom Hook.
 import useRegisterScreen from 'root/src/Screens/RegisterScreen/useRegisterScreen';
 
@@ -22,7 +19,11 @@ const RegisterScreen = () => {
 
   return (
     <Styled.MainContainer>
-      <WelcomeLogo />
+      <Styled.Svg_register />
+      <Styled.ContainerHeadText>
+        <Styled.HeadText>Create New Account</Styled.HeadText>
+        <Styled.SubText>Lorem Ipsum is simply dummy text </Styled.SubText>
+      </Styled.ContainerHeadText>
       <Styled.ContainerTextInput>
         <Styled.Username
           value={username}

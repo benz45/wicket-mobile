@@ -34,7 +34,7 @@ const LoginScreen = () => {
       </Styled.ContanerInput>
       <Styled.ContanerButton>
         <Styled.ButtonLogin loading={busy} onPress={_Submit}>
-          SignIn
+          Sign In
         </Styled.ButtonLogin>
         <Styled.ButtonRegister onPress={_navigateToRegister()}>
           Create new account

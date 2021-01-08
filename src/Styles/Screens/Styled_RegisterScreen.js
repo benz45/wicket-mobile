@@ -8,8 +8,26 @@ import {
   TextInput,
 } from 'react-native-paper';
 
+import SVG from 'root/assets/unDraw_register.svg';
+
 // Component
 import {Button as CustomBtn} from 'root/src/Components/CustomBtn';
+
+export const Svg_register = styled(SVG).attrs({width: 220, height: 140})`
+  align-self: center;
+`;
+export const ContainerHeadText = styled(View)`
+  padding: 36px 0px 0px 0px;
+`;
+
+export const HeadText = styled(Text)`
+  text-align: center;
+  font-size: 22px;
+`;
+export const SubText = styled(HeadText)`
+  font-size: 16px;
+  color: ${(props) => props.theme.colors.subText};
+`;
 
 export const MainContainer = styled(View)`
   flex: 1;

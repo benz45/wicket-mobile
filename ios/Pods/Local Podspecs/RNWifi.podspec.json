@@ -7,7 +7,7 @@
   "authors": "",
   "homepage": "https://github.com/JuanSeBestia/react-native-wifi-reborn#readme",
   "source": {
-    "git": "git+https://github.com/JuanSeBestia/react-native-wifi-reborn.git",
+    "git": "https://github.com/JuanSeBestia/react-native-wifi-reborn",
     "tag": "v4.3.3"
   },
   "requires_arc": true,
