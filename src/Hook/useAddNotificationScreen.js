@@ -7,7 +7,7 @@ import 'react-native-get-random-values';
 import PushNotification from 'react-native-push-notification';
 
 // Redux
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {action_setNotification} from 'root/src/Actions/actions_notification';
 
 const TURNON_RADIO_REPEAT = 'TURNON_RADIO_REPEAT';
@@ -41,6 +41,9 @@ const reducer = (state, {type, payload}) => {
 
 export default function useAddNotificationScreen() {
   const dispatchRedux = useDispatch();
+  const {notificationData: notiData} = useSelector(
+    (store) => store.NotificationReducer,
+  );
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const _turnOnRadioRepeat = () => {
@@ -70,23 +73,22 @@ export default function useAddNotificationScreen() {
     try {
       const OS = (value) => Platform.OS === value;
       const objNoti = {
-        // id: `${nanoid(3)}`,
-        // foreground: true, // BOOLEAN: If the notification was received in foreground or not
-        // userInteraction: true,
+        id: notiData.length,
+        foreground: true,
+        userInteraction: true,
         [Platform.OS === 'android' ? 'ticker' : 'title']: 'Wicket',
         message: state.name,
         date: fullTime,
         time: `${hour} : ${minute} ${fullTime.getHours() >= 12 ? 'PM' : 'AM'}`,
-        repeatType: state.repeat !== 'once' && state.repeat,
+        [state.repeat !== 'once' && 'repeatType']: state.repeat,
         [OS('android') && 'actions']: ['Close all', 'Open all'], // Android only.
         [OS('android') && 'invokeApp']: false, // Android only.
         [OS('android') && 'largeIcon']: 'ic_launcher_transform', // Android only.
         [OS('android') && 'smallIcon']: 'ic_launcher_transform', // Android only.
       };
-      PushNotification.localNotificationSchedule(objNoti);
-      dispatchRedux(action_setNotification(objNoti));
-      dispatch({type: CLEAR});
-      return;
+      await PushNotification.localNotificationSchedule(objNoti);
+      await dispatchRedux(action_setNotification(objNoti));
+      await dispatch({type: CLEAR});
     } catch (err) {
       console.log('_addNoti err' + err);
     }

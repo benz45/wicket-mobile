@@ -79,9 +79,7 @@ const Notification_Screen = ({navigation, route}) => {
   };
 
   // Replace and validate repeat to string from notificationDate.
-  const _replace_repeatIncard = (repeatType) => {
-    return repeatType === null ? 'Once' : 'Dialy';
-  };
+  const _repeatIncard = (val) => (val === 'day' ? 'Dialy' : 'Once');
 
   // Turn off icon trash.
   const _cancel_removeNotification = () => setLongPress(false);
@@ -119,7 +117,7 @@ const Notification_Screen = ({navigation, route}) => {
                     <Styled.CardRepeat>
                       {!longPress ? (
                         <Styled.RepeatNormalText>
-                          {_replace_repeatIncard(elem.repeatType)}
+                          {_repeatIncard(elem.repeatType)}
                         </Styled.RepeatNormalText>
                       ) : (
                         <Styled.RepeatLongText
