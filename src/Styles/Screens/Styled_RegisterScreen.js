@@ -8,7 +8,7 @@ import {
   TextInput,
 } from 'react-native-paper';
 
-import SVG from 'root/assets/unDraw_register.svg';
+import SVG from 'root/assets/unDraw_register_3.svg';
 
 // Component
 import {Button as CustomBtn} from 'root/src/Components/CustomBtn';

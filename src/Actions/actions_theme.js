@@ -64,6 +64,7 @@ const theme = {
   dark: {
     ...DarkTheme,
     theme: 'dark',
+    mode: 'adaptive',
     roundness: 10,
     font,
     colors: {
