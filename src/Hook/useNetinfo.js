@@ -11,7 +11,7 @@ const useNetinfo = () => {
 
   useEffect(() => {
     NetInfo.configure({
-      reachabilityUrl: 'https://www.google.co.th/',
+      reachabilityUrl: 'https://www.google.com',
       reachabilityTest: async (response) => response.status === 204,
       reachabilityLongTimeout: 10 * 1000, // 10s
       reachabilityShortTimeout: 3 * 1000, // 3s

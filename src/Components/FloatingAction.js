@@ -7,7 +7,7 @@ import * as Styled from 'root/src/Styles/components/Styled_FloatingAction';
 const icon = (name) => <Icons name={name} size={20} color="#f5f5f5" />;
 const actions = [
   {
-    text: 'Create new',
+    text: 'Add Product',
     icon: icon('plus'),
     name: 'CreateNew',
     position: 1,

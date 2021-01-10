@@ -5,7 +5,8 @@ import {BackHandler, Platform} from 'react-native';
 import * as Styled from 'root/src/Styles/Screens/Styled_NotificationScreen';
 
 // Cloud messaging
-import PushNotification from 'react-native-push-notification/';
+import PushNotification from 'react-native-push-notification';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 // React Novigations
 import {useIsFocused, CommonActions} from '@react-navigation/native';
@@ -70,6 +71,17 @@ const Notification_Screen = ({navigation, route}) => {
     dispatch(action_deleteNotification(res));
   };
 
+  const _removeAllNotification = async () => {
+    if (Platform.OS === 'ios') {
+      await PushNotificationIOS.removeAllDeliveredNotifications();
+      await PushNotificationIOS.removeAllPendingNotificationRequests();
+    }
+    if (Platform.OS === 'android') {
+      await PushNotification.cancelAllLocalNotifications();
+    }
+    await dispatch({type: 'REMOVE_ALL_NOTIFICATION'});
+  };
+
   // Replace date to string from notificationDate.
   const _replace_dateInCard = (dateTime) => {
     const newDate = new Date(dateTime);
@@ -88,51 +100,57 @@ const Notification_Screen = ({navigation, route}) => {
   useEffect(() => {
     if (!notificationData.length) _cancel_removeNotification();
   }, [notificationData]);
-  // PushNotification.removeAllDeliveredNotifications();
   return (
-    <Styled.Container onPress={_cancel_removeNotification}>
-      {!!!notificationData.length && <Styled.NoHaveDataNotification />}
-      <Styled.ScrollView>
-        {notificationData.length
-          ? notificationData.map((elem) => (
-              <Styled.CardContainerLongPress
-                key={elem.id}
-                onPress={_cancel_removeNotification}
-                onLongPress={() => setLongPress((prev) => !prev)}>
-                <Styled.Card>
-                  <Styled.InCard>
-                    <Styled.CardDetail>
-                      <Styled.DateText>
-                        {Platform.OS == 'ios'
-                          ? _replace_dateInCard(elem.date)
-                          : Platform.OS == 'android'
-                          ? _replace_dateInCard(elem.fireDate)
-                          : null}
-                      </Styled.DateText>
-                      <Styled.TimeText>{elem.time}</Styled.TimeText>
-                      <Styled.DescriptionText>
-                        {elem.message}
-                      </Styled.DescriptionText>
-                    </Styled.CardDetail>
-                    <Styled.CardRepeat>
-                      {!longPress ? (
-                        <Styled.RepeatNormalText>
-                          {_repeatIncard(elem.repeatType)}
-                        </Styled.RepeatNormalText>
-                      ) : (
-                        <Styled.RepeatLongText
-                          onPress={() => _removeNotification(elem.id)}>
-                          <Styled.Trash color={colors.error} />
-                        </Styled.RepeatLongText>
-                      )}
-                    </Styled.CardRepeat>
-                  </Styled.InCard>
-                </Styled.Card>
-              </Styled.CardContainerLongPress>
-            ))
-          : null}
-      </Styled.ScrollView>
-    </Styled.Container>
+    <>
+      <Styled.Container onPress={() => _cancel_removeNotification()}>
+        {!!!notificationData.length && <Styled.NoHaveDataNotification />}
+        {!!notificationData.length && (
+          <Styled.cRemoveAll onPress={() => _removeAllNotification()}>
+            <Styled.tRemoveAll>Remove All</Styled.tRemoveAll>
+          </Styled.cRemoveAll>
+        )}
+        <Styled.ScrollView>
+          {notificationData.length
+            ? notificationData.map((elem) => (
+                <Styled.CardContainerLongPress
+                  key={elem.id}
+                  onPress={() => _cancel_removeNotification()}
+                  onLongPress={() => setLongPress((prev) => !prev)}>
+                  <Styled.Card>
+                    <Styled.InCard>
+                      <Styled.CardDetail>
+                        <Styled.DateText>
+                          {Platform.OS == 'ios'
+                            ? _replace_dateInCard(elem.date)
+                            : Platform.OS == 'android'
+                            ? _replace_dateInCard(elem.fireDate)
+                            : null}
+                        </Styled.DateText>
+                        <Styled.TimeText>{elem.time}</Styled.TimeText>
+                        <Styled.DescriptionText>
+                          {elem.message}
+                        </Styled.DescriptionText>
+                      </Styled.CardDetail>
+                      <Styled.CardRepeat>
+                        {!longPress ? (
+                          <Styled.RepeatNormalText>
+                            {_repeatIncard(elem.repeatType)}
+                          </Styled.RepeatNormalText>
+                        ) : (
+                          <Styled.RepeatLongText
+                            onPress={() => _removeNotification(elem.id)}>
+                            <Styled.Trash color={colors.error} />
+                          </Styled.RepeatLongText>
+                        )}
+                      </Styled.CardRepeat>
+                    </Styled.InCard>
+                  </Styled.Card>
+                </Styled.CardContainerLongPress>
+              ))
+            : null}
+        </Styled.ScrollView>
+      </Styled.Container>
+    </>
   );
 };
 

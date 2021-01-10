@@ -7,6 +7,7 @@ import {
   SETTING_MESSAGE,
   SETALLNOTIFICATION_TOSTORE,
   VALIDATION_DATE_NOTIFICATION,
+  REMOVE_ALL_NOTIFICATION,
 } from 'root/src/actionsType';
 
 const initialState = {
@@ -67,6 +68,8 @@ export default (state = initialState, {type, payload}) => {
       return {...state, settingMessage: payload};
     case SETALLNOTIFICATION_TOSTORE:
       return _insertPropInPayload(payload);
+    case REMOVE_ALL_NOTIFICATION:
+      return {...state, notificationData: []};
     default:
       return state;
   }
