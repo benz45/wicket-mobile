@@ -58,6 +58,7 @@ export default function useMessage() {
                   title: data_message.user.username,
                   message: data_message.text,
                 });
+                return;
               }
             }
           }

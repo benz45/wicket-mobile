@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import {View, Text, ScrollView as Scroll, TouchableOpacity} from 'react-native';
+import {View, ScrollView as Scroll, TouchableOpacity} from 'react-native';
 
 // Component
 import NoData from 'root/src/Components/noData';
 
 // React native paper
-import {Card as CardPaper, Avatar} from 'react-native-paper';
+import {Text, Card as CardPaper, Avatar} from 'react-native-paper';
 
 export const Container = styled(TouchableOpacity).attrs({
   activeOpacity: 0.7,
@@ -15,7 +15,7 @@ export const Container = styled(TouchableOpacity).attrs({
 `;
 
 export const ScrollView = styled(Scroll)`
-  padding: 0px 10px 0px 10px;
+  padding: 8px 10px 0px 10px;
 `;
 
 export const CardContainer = styled(TouchableOpacity).attrs({
@@ -72,6 +72,16 @@ export const RepeatNormalText = styled(Text)`
 
 export const RepeatLongText = styled(TouchableOpacity)`
   align-self: center;
+`;
+
+export const cRemoveAll = styled(TouchableOpacity)`
+  padding: 8px 14px 8px 0px;
+`;
+
+export const tRemoveAll = styled(Text)`
+  text-align: right;
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 export const Trash = styled(Avatar.Icon).attrs({
