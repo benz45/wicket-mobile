@@ -16,40 +16,38 @@ export default function useCheckDoorConnection() {
         prevState.current = snap;
       });
     };
-    _setPrev();
-    const _loopCheckConnection = () => {
-      setInterval(() => {
-        action_checkConnection().then(async (snap) => {
-          const compareConnection_StatesAndPrevState = await snap.filter(
-            (elemStates) => {
-              for (let {state} of prevState.current) {
-                if (elemStates.state === state) {
-                  return elemStates.key;
-                }
+    setInterval(() => _setPrev(), 5000);
+    const _loopCheckConnection = async () => {
+      await action_checkConnection().then(async (snap) => {
+        const compareConnection_StatesAndPrevState = await snap.filter(
+          (elemStates) => {
+            for (let {state} of prevState.current) {
+              if (elemStates.state === state) {
+                return elemStates.key;
               }
-            },
-          );
+            }
+          },
+        );
 
-          // find array if connnection app.
-          const findKeyEqualRealtimeDatabase = await compareConnection_StatesAndPrevState.filter(
-            (elemCompareConnection) => {
-              for (let {key} of realtimeDatabase) {
-                if (elemCompareConnection.key === key) {
-                  return elemCompareConnection.key;
-                }
+        // find array if connnection app.
+        const findKeyEqualRealtimeDatabase = await compareConnection_StatesAndPrevState.filter(
+          (elemCompareConnection) => {
+            for (let {key} of realtimeDatabase) {
+              if (elemCompareConnection.key === key) {
+                return elemCompareConnection.key;
               }
-            },
-          );
+            }
+          },
+        );
 
-          // if (!!findKeyEqualRealtimeDatabase.length) {
-          await findKeyEqualRealtimeDatabase.map(({key}) =>
-            action_setConnection(key, false),
-          );
-          prevState.current = findKeyEqualRealtimeDatabase;
-          // }
-        });
-      }, 20000);
+        await findKeyEqualRealtimeDatabase.map(({key}) =>
+          action_setConnection(key, false),
+        );
+      });
     };
-    _loopCheckConnection();
+    const timeOut = setInterval(() => _loopCheckConnection(), 9000);
+    return () => {
+      clearInterval(timeOut);
+    };
   }, []);
 }
