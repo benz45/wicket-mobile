@@ -100,5 +100,5 @@ export default function useDateTimePicker() {
     }
   };
 
-  return [state, {_timeComponent, _shownDatePicket}];
+  return [state, {_timeComponent, _shownDatePicket, _submit}];
 }

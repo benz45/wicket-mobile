@@ -17,13 +17,17 @@ const AddNotificationScreen = () => {
     _dialogRadioRepeat,
   } = useAddNotificationScreen();
 
-  const [{time}, {_timeComponent, _shownDatePicket}] = useDateTimePicker();
+  const [
+    {time},
+    {_timeComponent, _shownDatePicket, _submit},
+  ] = useDateTimePicker();
 
   const {_dialogComponent, _setDialog} = useDialog();
 
   const _submitAddNoti = () => {
     _addNoti({fullTime: time.fullTime, hour: time.hour, minute: time.minute})
       .then(() => {
+        _submit();
         _setDialog().success({
           title: 'Insert success',
           description:
