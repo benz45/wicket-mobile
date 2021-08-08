@@ -11,7 +11,6 @@
 		0930B3622540314300FD7516 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0930B3612540314300FD7516 /* Fonts */; };
 		09B2F044256CFEEA00B50489 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B2F043256CFEEA00B50489 /* NetworkExtension.framework */; };
 		09B2F046256D008500B50489 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B2F045256D008500B50489 /* ExternalAccessory.framework */; };
-		09C6B9C525A80E9900E4F8EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09C6B9C425A80E9900E4F8EE /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -23,6 +22,7 @@
 		5AC6BBB369058B837060B9D3 /* libPods-Wicket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE8ADC08606143DEC592418 /* libPods-Wicket.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8EA2F5716F3F050008023950 /* libPods-Wicket-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5307834365E2883E33FD109 /* libPods-Wicket-tvOSTests.a */; };
+		ECDA4E3126BF9DD9001F28A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECDA4E3026BF9DD9001F28A7 /* GoogleService-Info.plist */; };
 		F714BB7791F1C8E8910B2F77 /* libPods-Wicket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A55C8B5C0E169636FB6EB28 /* libPods-Wicket-tvOS.a */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		099A5F682549B8E90058C927 /* Wicket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Wicket.entitlements; path = Wicket/Wicket.entitlements; sourceTree = "<group>"; };
 		09B2F043256CFEEA00B50489 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		09B2F045256D008500B50489 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		09C6B9C425A80E9900E4F8EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09F53FEA256D2C2200551F92 /* libRNWifi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNWifi.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Wicket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wicket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Wicket/AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		947EF93943878B409D47825D /* Pods-Wicket-WicketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wicket-WicketTests.debug.xcconfig"; path = "Target Support Files/Pods-Wicket-WicketTests/Pods-Wicket-WicketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B46722EAB3AA14D02EE8232B /* Pods-Wicket-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wicket-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Wicket-tvOSTests/Pods-Wicket-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D5307834365E2883E33FD109 /* libPods-Wicket-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wicket-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECDA4E3026BF9DD9001F28A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F85D22A8459E4AB571D7CAC8 /* Pods-Wicket-WicketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wicket-WicketTests.release.xcconfig"; path = "Target Support Files/Pods-Wicket-WicketTests/Pods-Wicket-WicketTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		13B07FAE1A68108700A75B9A /* Wicket */ = {
 			isa = PBXGroup;
 			children = (
-				09C6B9C425A80E9900E4F8EE /* GoogleService-Info.plist */,
+				ECDA4E3026BF9DD9001F28A7 /* GoogleService-Info.plist */,
 				099A5F682549B8E90058C927 /* Wicket.entitlements */,
 				0930B3612540314300FD7516 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -235,6 +235,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				4A016339909D2C794AD01867 /* [CP] Copy Pods Resources */,
+				88C45CDF2D7281D9E7217E31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +259,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				20DA3888832D6096465E8CD4 /* [CP] Copy Pods Resources */,
 				B4350EF2B2C9D919425F828C /* [CP-User] [RNFB] Core Configuration */,
+				44A903C0E78C797F6B798FEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,7 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				09C6B9C525A80E9900E4F8EE /* GoogleService-Info.plist in Resources */,
+				ECDA4E3126BF9DD9001F28A7 /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				0930B3622540314300FD7516 /* Fonts in Resources */,
 			);
@@ -469,6 +471,24 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		44A903C0E78C797F6B798FEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wicket/Pods-Wicket-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wicket/Pods-Wicket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4A016339909D2C794AD01867 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,6 +559,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88C45CDF2D7281D9E7217E31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wicket-WicketTests/Pods-Wicket-WicketTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wicket-WicketTests/Pods-Wicket-WicketTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A21B1182E5F0383F58DCF3A /* [CP] Check Pods Manifest.lock */ = {
